@@ -1,17 +1,14 @@
 package equipment.accessory;
 
 public class Creature {
-    private double damageShield;
 
-    public Creature(double damageShield){
-        this.damageShield = damageShield;
+    private CreatureType type;
+
+    public Creature(CreatureType creatureType){
+        this.type = creatureType;
     }
 
-    public double getDamageShield() {
-        return damageShield;
-    }
-
-    public void setDamageShield(double damageShield) {
-        this.damageShield = damageShield;
+    public CreatureType getType() {
+        return type;
     }
 }
