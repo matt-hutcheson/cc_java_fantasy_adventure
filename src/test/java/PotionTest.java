@@ -9,7 +9,7 @@ public class PotionTest {
     Potion potion;
     @Before
     public void setUp(){
-        potion = new Potion(PotionType.GERMALINE);
+        potion = new Potion("leftHand", "Potion", PotionType.GERMALINE);
     }
     @Test
     public void hasHealAmount(){

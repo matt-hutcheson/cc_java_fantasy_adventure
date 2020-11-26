@@ -9,7 +9,7 @@ public class ArmourTest {
     Armour armour;
     @Before
     public void setUp(){
-        armour = new Armour(ArmourType.CHAIN_MAIL);
+        armour = new Armour("rightArm", "Armour", ArmourType.CHAIN_MAIL);
     }
     @Test
     public void hasDamageReduction(){

@@ -9,7 +9,7 @@ public class WeaponTest {
     Weapon weapon;
     @Before
     public void setUp(){
-        weapon = new Weapon(WeaponType.SWORD);
+        weapon = new Weapon("rightHand","Weapon", WeaponType.SWORD);
     }
     @Test
     public void hasDamage(){

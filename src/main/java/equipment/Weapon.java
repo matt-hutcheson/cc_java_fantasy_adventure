@@ -1,14 +1,15 @@
 package equipment;
 
-public class Weapon {
+public class Weapon extends Equipment{
 
-    private WeaponType type;
+    private WeaponType weaponType;
 
-    public Weapon(WeaponType weaponType){
-        this.type = weaponType;
+    public Weapon(String equipmentSlot, String equipmentType, WeaponType weaponType){
+        super(equipmentSlot, equipmentType);
+        this.weaponType = weaponType;
     }
 
     public WeaponType getWeapon(){
-        return this.type;
+        return this.weaponType;
     }
 }
