@@ -10,7 +10,7 @@ public class Player extends Character{
     private String archetype;
     private ArrayList<Equipment> backpack;
 
-    public Player(String name, double hitpoints, Weapon weaponSlot, Armour armourSlot, String archetype, ArrayList<> backpack){
+    public Player(String name, double hitpoints, Weapon weaponSlot, Armour armourSlot, String archetype){
         super(name, hitpoints, weaponSlot, armourSlot);
         this.archetype = archetype;
         this.backpack = new ArrayList<Equipment>();
