@@ -15,5 +15,13 @@ public class WeaponTest {
     public void hasDamage(){
         assertEquals(7 ,weapon.getWeapon().getDamage(), 0.1);
     }
+    @Test
+    public void hasEquipmentSlot(){
+        assertEquals("rightHand", weapon.getSlot());
+    }
+    @Test
+    public void hasEquipmentType(){
+        assertEquals("Weapon", weapon.getEquipmentType());
+    }
 
 }

@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class PlayerTest {
 
@@ -58,5 +59,18 @@ public class PlayerTest {
         Armour armour = new Armour("armourslot", "armour", ArmourType.LEATHER_ARMOUR);
         player.addToBackpack(armour);
         assertEquals(1, player.getBackpack().size());
+    }
+    @Test
+    public void canRemoveItemFromBackpack(){
+        Armour armour = new Armour("armourslot", "armour", ArmourType.LEATHER_ARMOUR);
+        player.addToBackpack(armour);
+        assertEquals(armour, player.removeFromBackpack(armour));
+    }
+    @Test
+    public void canEquipItem(){
+        Armour testArmour = new Armour("armourslot", "armour", ArmourType.LEATHER_ARMOUR);
+        player.equipToArmourSlot(testArmour);
+        assertEquals(testArmour, player.getArmourSlot());
+        assertTrue(player.getBackpack().contains(armour));
     }
 }

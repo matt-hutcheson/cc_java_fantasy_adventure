@@ -31,4 +31,14 @@ public class Player extends Character{
     public void addToBackpack(Equipment equipment){
         this.backpack.add(equipment);
     }
+
+    public Equipment removeFromBackpack(Equipment equipment){
+        int index = this.backpack.indexOf(equipment);
+        return this.backpack.remove(index);
+    }
+
+    public void equipToArmourSlot(Armour armour){
+        this.addToBackpack(this.getArmourSlot());
+        this.setArmourSlot(armour);
+    }
 }
