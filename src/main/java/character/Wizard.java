@@ -20,7 +20,6 @@ public class Wizard extends Player {
 
     public Creature getCreature() {
         return creature;
-
     }
 
     public ArrayList<Weapon> getSpells() {
@@ -33,10 +32,5 @@ public class Wizard extends Player {
 
     public void addSpell(Weapon spell){
         this.spells.add(spell);
-    }
-
-    public void equipToWeaponSlot(Weapon spell){
-        this.addToBackpack(this.getWeaponSlot());
-        this.setWeaponSlot(spell);
     }
 }

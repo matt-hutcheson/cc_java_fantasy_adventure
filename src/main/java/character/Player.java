@@ -6,7 +6,7 @@ import equipment.Weapon;
 
 import java.util.ArrayList;
 
-public class Player extends Character{
+public abstract class Player extends Character{
     private String archetype;
     private ArrayList<Equipment> backpack;
 

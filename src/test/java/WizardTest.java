@@ -1,4 +1,3 @@
-import character.Player;
 import character.Wizard;
 import equipment.Armour;
 import equipment.ArmourType;
@@ -39,7 +38,12 @@ public class WizardTest {
 
     @Test
     public void wizardHasHitpoints(){
-        assertEquals(100, wizard.getHitpoints(), 0.01);
+        assertEquals(100, wizard.getCurrentHitpoints(), 0.01);
+    }
+
+    @Test
+    public void wizardHasMaxHitpoints(){
+        assertEquals(100, wizard.getMaxHitpoints(), 0.01);
     }
 
     @Test
@@ -83,5 +87,35 @@ public class WizardTest {
         assertEquals(testWeapon, wizard.getWeaponSlot());
         assertTrue(wizard.getBackpack().contains(weapon));
     }
+    @Test
+    public void canGetCreature(){
+        assertEquals(creature, wizard.getCreature());
+    }
+    @Test
+    public void canSetCreature(){
+        Creature testCreature = new Creature(CreatureType.ANGRY_SQUIRREL);
+        wizard.setCreature(testCreature);
+        assertEquals(testCreature, wizard.getCreature());
+    }
+    @Test
+    public void spellsStartsEmpty(){
+        assertEquals(0, wizard.getSpells().size());
+    }
+    @Test
+    public void canAddSpellToSpells(){
+        wizard.addSpell(weapon);
+        assertEquals(1, wizard.getSpells().size());
+    }
 
+    @Test
+    public void canTakeDamage(){
+        wizard.damage(50);
+        assertEquals(50, wizard.getCurrentHitpoints(), 0.1);
+    }
+    @Test
+    public void canHeal(){
+        wizard.damage(50);
+        wizard.heal(20);
+        assertEquals(70, wizard.getCurrentHitpoints(), 0.01);
+    }
 }
