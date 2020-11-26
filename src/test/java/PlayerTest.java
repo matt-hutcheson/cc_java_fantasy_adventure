@@ -67,10 +67,18 @@ public class PlayerTest {
         assertEquals(armour, player.removeFromBackpack(armour));
     }
     @Test
-    public void canEquipItem(){
-        Armour testArmour = new Armour("armourslot", "armour", ArmourType.LEATHER_ARMOUR);
+    public void canEquipArmour(){
+        Armour testArmour = new Armour("armourSlot", "armour", ArmourType.LEATHER_ARMOUR);
         player.equipToArmourSlot(testArmour);
         assertEquals(testArmour, player.getArmourSlot());
         assertTrue(player.getBackpack().contains(armour));
+    }
+
+    @Test
+    public void canEquipWeapons(){
+        Weapon testWeapon = new Weapon("weaponSlot", "Weapon", WeaponType.AXE);
+        player.equipToWeaponSlot(testWeapon);
+        assertEquals(testWeapon, player.getWeaponSlot());
+        assertTrue(player.getBackpack().contains(weapon));
     }
 }

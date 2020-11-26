@@ -41,4 +41,9 @@ public class Player extends Character{
         this.addToBackpack(this.getArmourSlot());
         this.setArmourSlot(armour);
     }
+
+    public void equipToWeaponSlot(Weapon weapon){
+        this.addToBackpack(this.getWeaponSlot());
+        this.setWeaponSlot(weapon);
+    }
 }
