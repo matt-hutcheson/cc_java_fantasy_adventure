@@ -13,6 +13,7 @@ public class Cleric extends Player{
     public Cleric(String name, double hitPoints, Weapon weaponSlot, Armour armourSlot, String archetype, Potion currentPotion) {
         super(name, hitPoints, weaponSlot, armourSlot, archetype);
         this.currentPotion = currentPotion;
+        this.potions = new ArrayList<Potion>();
     }
 
     public ArrayList<Potion> getPotions() {
@@ -36,5 +37,10 @@ public class Cleric extends Player{
             player.heal(this.currentPotion.getType().getHealAmount());
             currentPotion = null;
         }
+    }
+
+    public void equipToPotionSlot(Potion potion){
+        this.addPotionToCollection(this.getCurrentPotion());
+        this.setCurrentPotion(potion);
     }
 }
