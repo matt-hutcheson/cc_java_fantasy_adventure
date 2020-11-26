@@ -70,4 +70,8 @@ public abstract class Character {
         }
     }
 
+    public void attack(Character attacker, Character hurter){
+        hurter.damage(attacker.weaponSlot.getWeapon().getDamage()* hurter.armourSlot.getArmour().getDamageReduction());
+    }
+
 }
