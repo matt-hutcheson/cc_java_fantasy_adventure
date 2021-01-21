@@ -1,5 +1,26 @@
 package character;
 
-public class Knight{
+import equipment.Armour;
+import equipment.Weapon;
+import equipment.accessory.Creature;
+import equipment.accessory.Shield;
 
+import java.util.ArrayList;
+
+public class Knight extends Player{
+
+    private Shield shield;
+
+    public Knight(String name, double hitPoints, Weapon weaponSlot, Armour armourSlot, ArcheType archetype, Shield shield) {
+        super(name, hitPoints, weaponSlot, armourSlot, archetype);
+        this.shield=shield;
+    }
+
+    public Shield getShield() {
+        return shield;
+    }
+
+    public void setShield(Shield shield) {
+        this.shield = shield;
+    }
 }
