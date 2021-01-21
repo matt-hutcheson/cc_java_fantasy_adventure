@@ -1,27 +1,27 @@
 package equipment;
 
 public abstract class Equipment {
-    private String slot;
-    private String type;
+    private EquipmentSlots slot;
+    private EquipmentType type;
 
-    public Equipment(String slot, String type){
+    public Equipment(EquipmentSlots slot, EquipmentType type){
         this.slot = slot;
         this.type = type;
     }
 
-    public String getSlot() {
+    public EquipmentSlots getSlot() {
         return slot;
     }
 
-    public void setSlot(String slot) {
+    public void setSlot(EquipmentSlots slot) {
         this.slot = slot;
     }
 
-    public String getEquipmentType() {
+    public EquipmentType getEquipmentType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(EquipmentType type) {
         this.type = type;
     }
 }

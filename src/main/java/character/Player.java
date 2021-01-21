@@ -7,20 +7,20 @@ import equipment.Weapon;
 import java.util.ArrayList;
 
 public abstract class Player extends Character{
-    private String archetype;
+    private ArcheType archetype;
     private ArrayList<Equipment> backpack;
 
-    public Player(String name, double hitpoints, Weapon weaponSlot, Armour armourSlot, String archetype){
-        super(name, hitpoints, weaponSlot, armourSlot);
+    public Player(String name, double hitPoints, Weapon weaponSlot, Armour armourSlot, ArcheType archetype){
+        super(name, hitPoints, weaponSlot, armourSlot);
         this.archetype = archetype;
         this.backpack = new ArrayList<Equipment>();
     }
 
-    public String getArchetype() {
+    public ArcheType getArchetype() {
         return archetype;
     }
 
-    public void setArchetype(String archetype) {
+    public void setArchetype(ArcheType archetype) {
         this.archetype = archetype;
     }
 

@@ -1,8 +1,6 @@
+import character.ArcheType;
 import character.Cleric;
-import equipment.Armour;
-import equipment.ArmourType;
-import equipment.Weapon;
-import equipment.WeaponType;
+import equipment.*;
 import equipment.accessory.Potion;
 import equipment.accessory.PotionType;
 import org.junit.Before;
@@ -20,29 +18,29 @@ public class ClericTest {
 
     @Before
     public void setUp(){
-        weapon = new Weapon("leftHand", "Weapon", WeaponType.CLUB);
-        armour = new Armour("armourSlot", "Armour", ArmourType.JERKIN);
-        potion = new Potion("rightHand", "Potion", PotionType.GERMALINE);
-        cleric = new Cleric("Eric", 100, weapon, armour, "Cleric", potion);
+        weapon = new Weapon(EquipmentSlots.WEAPONSLOT, EquipmentType.MELEEWEAPON, WeaponType.CLUB);
+        armour = new Armour(EquipmentSlots.ARMOURSLOT, EquipmentType.CLERICARMOUR, ArmourType.JERKIN);
+        potion = new Potion(EquipmentSlots.ACCESSORYSLOT, EquipmentType.POTION, PotionType.GERMALINE);
+        cleric = new Cleric("Eric", 100, weapon, armour, ArcheType.CLERIC, potion);
     }
 
     @Test
     public void clericCanHeal(){
         cleric.damage(25);
         cleric.throwPotion(cleric);
-        assertEquals(100, cleric.getCurrentHitpoints(), 0.01);
+        assertEquals(100, cleric.getCurrentHitPoints(), 0.01);
     }
 
     @Test
-    public void canAddPotiontoTrousers(){
-        Potion newPotion = new Potion("rightHand", "potion", PotionType.MORPHINE);
+    public void canAddPotionToTrousers(){
+        Potion newPotion = new Potion(EquipmentSlots.ACCESSORYSLOT, EquipmentType.POTION, PotionType.MORPHINE);
         cleric.addPotionToCollection(newPotion);
         assertEquals(1, cleric.getPotions().size());
     }
 
     @Test
     public void canTakePotionFromTrousersANdPutTheOtherOneAway(){
-        Potion newPotion = new Potion("rightHand", "potion", PotionType.MORPHINE);
+        Potion newPotion = new Potion(EquipmentSlots.ACCESSORYSLOT, EquipmentType.POTION, PotionType.MORPHINE);
         cleric.equipToPotionSlot(newPotion);
         assertEquals(newPotion, cleric.getCurrentPotion());
         assertTrue (cleric.getPotions().contains(potion));

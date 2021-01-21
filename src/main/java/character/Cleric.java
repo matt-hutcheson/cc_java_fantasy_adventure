@@ -10,7 +10,7 @@ public class Cleric extends Player{
     private ArrayList<Potion> potions;
     private Potion currentPotion;
 
-    public Cleric(String name, double hitPoints, Weapon weaponSlot, Armour armourSlot, String archetype, Potion currentPotion) {
+    public Cleric(String name, double hitPoints, Weapon weaponSlot, Armour armourSlot, ArcheType archetype, Potion currentPotion) {
         super(name, hitPoints, weaponSlot, armourSlot, archetype);
         this.currentPotion = currentPotion;
         this.potions = new ArrayList<Potion>();

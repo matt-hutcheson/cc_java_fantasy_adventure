@@ -5,17 +5,17 @@ import equipment.Weapon;
 
 public abstract class Character {
     private String name;
-    private double maxHitpoints;
+    private double maxHitPoints;
     private Weapon weaponSlot;
     private Armour armourSlot;
-    private double currentHitpoints;
+    private double currentHitPoints;
 
-    public Character(String name, double maxHitpoints, Weapon weaponSlot, Armour armourSlot){
+    public Character(String name, double maxHitPoints, Weapon weaponSlot, Armour armourSlot){
         this.name = name;
-        this.maxHitpoints = maxHitpoints;
+        this.maxHitPoints = maxHitPoints;
         this.weaponSlot =  weaponSlot;
         this.armourSlot = armourSlot;
-        this.currentHitpoints = maxHitpoints;
+        this.currentHitPoints = maxHitPoints;
     }
 
     public String getName() {
@@ -26,20 +26,20 @@ public abstract class Character {
         this.name = name;
     }
 
-    public double getCurrentHitpoints() {
-        return currentHitpoints;
+    public double getCurrentHitPoints() {
+        return currentHitPoints;
     }
 
-    public void setCurrentHitpoints(double hitpoints) {
-        this.currentHitpoints = hitpoints;
+    public void setCurrentHitPoints(double hitPoints) {
+        this.currentHitPoints = hitPoints;
     }
 
-    public double getMaxHitpoints(){
-        return this.maxHitpoints;
+    public double getMaxHitPoints(){
+        return this.maxHitPoints;
     }
 
-    public void setMaxHitpoints(double hitpoints){
-        this.maxHitpoints = hitpoints;
+    public void setMaxHitPoints(double hitPoints){
+        this.maxHitPoints = hitPoints;
     }
 
     public Weapon getWeaponSlot() {
@@ -59,19 +59,19 @@ public abstract class Character {
     }
 
     public void damage(double damageBy){
-        this.currentHitpoints -= damageBy;
+        this.currentHitPoints -= damageBy;
     }
 
     public void heal(double healBy){
-        if (this.currentHitpoints + healBy < this.maxHitpoints) {
-            this.currentHitpoints += healBy;
+        if (this.currentHitPoints + healBy < this.maxHitPoints) {
+            this.currentHitPoints += healBy;
         } else {
-            this.currentHitpoints = this.maxHitpoints;
+            this.currentHitPoints = this.maxHitPoints;
         }
     }
 
-    public void attack(Character attacker, Character hurter){
-        hurter.damage(attacker.weaponSlot.getWeapon().getDamage()* hurter.armourSlot.getArmour().getDamageReduction());
+    public void attack(Character attacker, Character defender){
+        defender.damage(attacker.weaponSlot.getWeapon().getDamage() * defender.armourSlot.getArmour().getDamageReduction());
     }
 
 }

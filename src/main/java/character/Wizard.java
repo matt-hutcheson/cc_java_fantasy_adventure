@@ -12,7 +12,7 @@ public class Wizard extends Player {
     private Creature creature;
 
 
-    public Wizard(String name, double hitPoints, Weapon weaponSlot, Armour armourSlot, String archetype, Creature creature) {
+    public Wizard(String name, double hitPoints, Weapon weaponSlot, Armour armourSlot, ArcheType archetype, Creature creature) {
         super(name, hitPoints, weaponSlot, armourSlot, archetype);
         this.creature = creature;
         this.spells = new ArrayList<Weapon>();

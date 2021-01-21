@@ -1,8 +1,6 @@
+import character.ArcheType;
 import character.Wizard;
-import equipment.Armour;
-import equipment.ArmourType;
-import equipment.Weapon;
-import equipment.WeaponType;
+import equipment.*;
 import equipment.accessory.Creature;
 import equipment.accessory.CreatureType;
 import org.junit.Before;
@@ -20,10 +18,10 @@ public class WizardTest {
 
     @Before
     public void setUp(){
-        creature = new Creature(CreatureType.RABID_TORTOISE);
-        weapon = new Weapon("weaponSlot", "Spell", WeaponType.FREEZY_BEAM);
-        armour = new Armour("armourSlot", "Armour", ArmourType.ROBES);
-        wizard = new Wizard("The Great Stupendo", 100, weapon, armour, "Wizard", creature);
+        creature = new Creature(EquipmentSlots.ACCESSORYSLOT, EquipmentType.CREATURE, CreatureType.RABID_TORTOISE);
+        weapon = new Weapon(EquipmentSlots.WEAPONSLOT, EquipmentType.SPELLWEAPON, WeaponType.FREEZY_BEAM);
+        armour = new Armour(EquipmentSlots.ARMOURSLOT, EquipmentType.MAGEARMOUR, ArmourType.ROBES);
+        wizard = new Wizard("The Great Stupendo", 100, weapon, armour, ArcheType.MAGE, creature);
     }
 
     @Test
@@ -33,17 +31,17 @@ public class WizardTest {
 
     @Test
     public void wizardHasArchetype(){
-        assertEquals("Wizard", wizard.getArchetype());
+        assertEquals(ArcheType.MAGE, wizard.getArchetype());
     }
 
     @Test
-    public void wizardHasHitpoints(){
-        assertEquals(100, wizard.getCurrentHitpoints(), 0.01);
+    public void wizardHasHitPoints(){
+        assertEquals(100, wizard.getCurrentHitPoints(), 0.01);
     }
 
     @Test
-    public void wizardHasMaxHitpoints(){
-        assertEquals(100, wizard.getMaxHitpoints(), 0.01);
+    public void wizardHasMaxHitPoints(){
+        assertEquals(100, wizard.getMaxHitPoints(), 0.01);
     }
 
     @Test
@@ -62,19 +60,19 @@ public class WizardTest {
     }
     @Test
     public void wizardCanAddItemsToBackPack(){
-        Armour armour = new Armour("armourslot", "armour", ArmourType.BATTLE_ROBES);
+        Armour armour = new Armour(EquipmentSlots.ARMOURSLOT, EquipmentType.MAGEARMOUR, ArmourType.BATTLE_ROBES);
         wizard.addToBackpack(armour);
         assertEquals(1, wizard.getBackpack().size());
     }
     @Test
     public void canRemoveItemFromBackpack(){
-        Armour armour = new Armour("armourslot", "armour", ArmourType.BATTLE_ROBES);
+        Armour armour = new Armour(EquipmentSlots.ARMOURSLOT, EquipmentType.MAGEARMOUR, ArmourType.BATTLE_ROBES);
         wizard.addToBackpack(armour);
         assertEquals(armour, wizard.removeFromBackpack(armour));
     }
     @Test
     public void canEquipArmour(){
-        Armour testArmour = new Armour("armourSlot", "armour", ArmourType.BATTLE_ROBES);
+        Armour testArmour = new Armour(EquipmentSlots.ARMOURSLOT, EquipmentType.MAGEARMOUR, ArmourType.BATTLE_ROBES);
         wizard.equipToArmourSlot(testArmour);
         assertEquals(testArmour, wizard.getArmourSlot());
         assertTrue(wizard.getBackpack().contains(armour));
@@ -82,7 +80,7 @@ public class WizardTest {
 
     @Test
     public void canEquipWeapons(){
-        Weapon testWeapon = new Weapon("weaponSlot", "Spell", WeaponType.FIREBALL);
+        Weapon testWeapon = new Weapon(EquipmentSlots.WEAPONSLOT, EquipmentType.SPELLWEAPON, WeaponType.FIREBALL);
         wizard.equipToWeaponSlot(testWeapon);
         assertEquals(testWeapon, wizard.getWeaponSlot());
         assertTrue(wizard.getBackpack().contains(weapon));
@@ -93,7 +91,7 @@ public class WizardTest {
     }
     @Test
     public void canSetCreature(){
-        Creature testCreature = new Creature(CreatureType.ANGRY_SQUIRREL);
+        Creature testCreature = new Creature(EquipmentSlots.ACCESSORYSLOT, EquipmentType.CREATURE, CreatureType.ANGRY_SQUIRREL);
         wizard.setCreature(testCreature);
         assertEquals(testCreature, wizard.getCreature());
     }
@@ -110,12 +108,12 @@ public class WizardTest {
     @Test
     public void canTakeDamage(){
         wizard.damage(50);
-        assertEquals(50, wizard.getCurrentHitpoints(), 0.1);
+        assertEquals(50, wizard.getCurrentHitPoints(), 0.1);
     }
     @Test
     public void canHeal(){
         wizard.damage(50);
         wizard.heal(20);
-        assertEquals(70, wizard.getCurrentHitpoints(), 0.01);
+        assertEquals(70, wizard.getCurrentHitPoints(), 0.01);
     }
 }
