@@ -23,4 +23,9 @@ public class Knight extends Player{
     public void setShield(Shield shield) {
         this.shield = shield;
     }
+
+    public void shieldBlock(Player player) {
+
+    }
+
 }
