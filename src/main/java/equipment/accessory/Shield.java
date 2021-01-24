@@ -1,15 +1,14 @@
 package equipment.accessory;
 
-import equipment.Equipment;
 import equipment.EquipmentSlots;
 import equipment.EquipmentType;
 
-public class Shield extends Equipment {
+public class Shield extends Accessory {
 
     private ShieldType shieldType;
 
-    public Shield(EquipmentSlots slot, EquipmentType type, ShieldType shieldType) {
-        super(slot, type);
+    public Shield(EquipmentSlots equipmentSlots, EquipmentType equipmentType, AccessoryType accessoryType, ShieldType shieldType) {
+        super(equipmentSlots, equipmentType, accessoryType);
         this.shieldType=shieldType;
     }
 

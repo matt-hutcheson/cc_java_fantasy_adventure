@@ -1,24 +1,23 @@
 package character;
 
 import equipment.Armour;
-import equipment.Equipment;
-import equipment.EquipmentType;
 import equipment.Weapon;
+import equipment.accessory.Accessory;
 
 public abstract class Character {
     private String name;
     private double maxHitPoints;
     private Weapon weaponSlot;
     private Armour armourSlot;
-    private Equipment equipmentSlot;
+    private Accessory accessorySlot;
     private double currentHitPoints;
 
-    public Character(String name, double maxHitPoints, Weapon weaponSlot, Armour armourSlot, Equipment equipmentSlot){
+    public Character(String name, double maxHitPoints, Weapon weaponSlot, Armour armourSlot, Accessory accessorySlot){
         this.name = name;
         this.maxHitPoints = maxHitPoints;
         this.weaponSlot =  weaponSlot;
         this.armourSlot = armourSlot;
-        this.equipmentSlot = equipmentSlot;
+        this.accessorySlot = accessorySlot;
         this.currentHitPoints = maxHitPoints;
     }
 
@@ -62,12 +61,12 @@ public abstract class Character {
         this.armourSlot = armourSlot;
     }
 
-    public Equipment getEquipmentSlot() {
-        return equipmentSlot;
+    public Accessory getAccessorySlot() {
+        return accessorySlot;
     }
 
-    public void setEquipmentSlot(Equipment equipmentSlot) {
-        this.equipmentSlot = equipmentSlot;
+    public void setAccessorySlot(Accessory accessorySlot) {
+        this.accessorySlot = accessorySlot;
     }
 
     public void damage(double damageBy){

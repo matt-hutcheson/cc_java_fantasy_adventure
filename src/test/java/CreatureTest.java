@@ -1,5 +1,6 @@
 import equipment.EquipmentSlots;
 import equipment.EquipmentType;
+import equipment.accessory.AccessoryType;
 import equipment.accessory.Creature;
 import equipment.accessory.CreatureType;
 import org.junit.Before;
@@ -13,7 +14,7 @@ public class CreatureTest {
 
     @Before
     public void setUp(){
-        creature = new Creature(EquipmentSlots.ACCESSORYSLOT, EquipmentType.CREATURE, CreatureType.WERE_BEAR);
+        creature = new Creature(EquipmentSlots.ACCESSORYSLOT, EquipmentType.ACCESSORY, AccessoryType.CREATURE, CreatureType.WERE_BEAR);
     }
 
     @Test

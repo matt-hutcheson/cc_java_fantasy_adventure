@@ -1,6 +1,7 @@
 import character.ArcheType;
 import character.Wizard;
 import equipment.*;
+import equipment.accessory.AccessoryType;
 import equipment.accessory.Creature;
 import equipment.accessory.CreatureType;
 import org.junit.Before;
@@ -18,7 +19,7 @@ public class WizardTest {
 
     @Before
     public void setUp(){
-        creature = new Creature(EquipmentSlots.ACCESSORYSLOT, EquipmentType.CREATURE, CreatureType.RABID_TORTOISE);
+        creature = new Creature(EquipmentSlots.ACCESSORYSLOT, EquipmentType.ACCESSORY, AccessoryType.CREATURE, CreatureType.RABID_TORTOISE);
         weapon = new Weapon(EquipmentSlots.WEAPONSLOT, EquipmentType.SPELLWEAPON, WeaponType.FREEZY_BEAM);
         armour = new Armour(EquipmentSlots.ARMOURSLOT, EquipmentType.MAGEARMOUR, ArmourType.ROBES);
         wizard = new Wizard("The Great Stupendo", 100, weapon, armour, ArcheType.MAGE, creature);
@@ -91,7 +92,7 @@ public class WizardTest {
     }
     @Test
     public void canSetCreature(){
-        Creature testCreature = new Creature(EquipmentSlots.ACCESSORYSLOT, EquipmentType.CREATURE, CreatureType.ANGRY_SQUIRREL);
+        Creature testCreature = new Creature(EquipmentSlots.ACCESSORYSLOT, EquipmentType.ACCESSORY, AccessoryType.CREATURE, CreatureType.ANGRY_SQUIRREL);
         wizard.setCreature(testCreature);
         assertEquals(testCreature, wizard.getCreature());
     }

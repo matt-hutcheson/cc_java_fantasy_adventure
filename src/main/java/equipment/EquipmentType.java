@@ -6,7 +6,5 @@ public enum EquipmentType {
     KNIGHTARMOUR,
     CLERICARMOUR,
     MAGEARMOUR,
-    POTION,
-    CREATURE,
-    SHIELD
+    ACCESSORY
 }

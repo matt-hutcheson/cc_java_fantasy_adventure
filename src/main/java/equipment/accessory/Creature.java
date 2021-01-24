@@ -1,15 +1,14 @@
 package equipment.accessory;
 
-import equipment.Equipment;
 import equipment.EquipmentSlots;
 import equipment.EquipmentType;
 
-public class Creature extends Equipment {
+public class Creature extends Accessory {
 
     private CreatureType type;
 
-    public Creature(EquipmentSlots equipmentSlots, EquipmentType equipmentType, CreatureType creatureType){
-        super(equipmentSlots, equipmentType);
+    public Creature(EquipmentSlots equipmentSlots, EquipmentType equipmentType, AccessoryType accessoryType, CreatureType creatureType){
+        super(equipmentSlots, equipmentType, accessoryType);
         this.type = creatureType;
     }
 

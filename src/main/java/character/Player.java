@@ -2,8 +2,8 @@ package character;
 
 import equipment.Armour;
 import equipment.Equipment;
-import equipment.EquipmentType;
 import equipment.Weapon;
+import equipment.accessory.Accessory;
 
 import java.util.ArrayList;
 
@@ -11,8 +11,8 @@ public abstract class Player extends Character{
     private ArcheType archetype;
     private ArrayList<Equipment> backpack;
 
-    public Player(String name, double hitPoints, Weapon weaponSlot, Armour armourSlot, Equipment equipmentSlot, ArcheType archetype){
-        super(name, hitPoints, weaponSlot, armourSlot, equipmentSlot);
+    public Player(String name, double hitPoints, Weapon weaponSlot, Armour armourSlot, Accessory accessorySlot, ArcheType archetype){
+        super(name, hitPoints, weaponSlot, armourSlot, accessorySlot);
         this.archetype = archetype;
         this.backpack = new ArrayList<Equipment>();
     }
@@ -48,8 +48,8 @@ public abstract class Player extends Character{
         this.setWeaponSlot(weapon);
     }
 
-    public void equipToEquipmentSlot(Equipment equipment){
-        this.addToBackpack(this.getEquipmentSlot());
-        this.setEquipmentSlot(equipment);
+    public void equipToAccessorySlot(Accessory accessory){
+        this.addToBackpack(this.getAccessorySlot());
+        this.setAccessorySlot(accessory);
     }
 }

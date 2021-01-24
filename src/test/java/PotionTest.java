@@ -1,5 +1,6 @@
 import equipment.EquipmentSlots;
 import equipment.EquipmentType;
+import equipment.accessory.AccessoryType;
 import equipment.accessory.Potion;
 import equipment.accessory.PotionType;
 import org.junit.Before;
@@ -11,7 +12,7 @@ public class PotionTest {
     Potion potion;
     @Before
     public void setUp(){
-        potion = new Potion(EquipmentSlots.ACCESSORYSLOT, EquipmentType.POTION, PotionType.GERMALINE);
+        potion = new Potion(EquipmentSlots.ACCESSORYSLOT, EquipmentType.ACCESSORY, AccessoryType.POTION, PotionType.GERMALINE);
     }
     @Test
     public void hasHealAmount(){
