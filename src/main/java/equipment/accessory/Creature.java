@@ -15,4 +15,5 @@ public class Creature extends Accessory {
     public CreatureType getType() {
         return type;
     }
+
 }

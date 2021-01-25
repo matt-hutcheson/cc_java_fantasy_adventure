@@ -22,7 +22,7 @@ public class WizardTest {
         creature = new Creature(EquipmentSlots.ACCESSORYSLOT, EquipmentType.ACCESSORY, AccessoryType.CREATURE, CreatureType.RABID_TORTOISE);
         weapon = new Weapon(EquipmentSlots.WEAPONSLOT, EquipmentType.SPELLWEAPON, WeaponType.FREEZY_BEAM);
         armour = new Armour(EquipmentSlots.ARMOURSLOT, EquipmentType.MAGEARMOUR, ArmourType.ROBES);
-        wizard = new Wizard("The Great Stupendo", 100, weapon, armour, ArcheType.MAGE, creature);
+        wizard = new Wizard("The Great Stupendo", 100, weapon, armour, creature, ArcheType.MAGE, creature);
     }
 
     @Test

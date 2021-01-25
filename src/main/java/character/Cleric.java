@@ -2,16 +2,17 @@ package character;
 
 import equipment.Armour;
 import equipment.Weapon;
+import equipment.accessory.Accessory;
 import equipment.accessory.Potion;
 
 import java.util.ArrayList;
 
-public class Cleric extends Player{
+public class Cleric extends Player implements IPlay{
     private ArrayList<Potion> potions;
     private Potion currentPotion;
 
-    public Cleric(String name, double hitPoints, Weapon weaponSlot, Armour armourSlot, ArcheType archetype, Potion currentPotion) {
-        super(name, hitPoints, weaponSlot, armourSlot, archetype);
+    public Cleric(String name, double hitPoints, Weapon weaponSlot, Armour armourSlot, Accessory accessorySlot, ArcheType archetype, Potion currentPotion) {
+        super(name, hitPoints, weaponSlot, armourSlot, accessorySlot, archetype);
         this.currentPotion = currentPotion;
         this.potions = new ArrayList<Potion>();
     }
@@ -32,9 +33,9 @@ public class Cleric extends Player{
         this.currentPotion = currentPotion;
     }
 
-    public void throwPotion(Player player){
+    public void useAccessory(Player user, Player receiver){
         if (currentPotion != null) {
-            player.heal(this.currentPotion.getType().getHealAmount());
+            receiver.heal(this.currentPotion.getType().getHealAmount());
             currentPotion = null;
         }
     }

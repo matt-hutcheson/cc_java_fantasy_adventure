@@ -5,7 +5,7 @@ import equipment.Equipment;
 import equipment.EquipmentSlots;
 import equipment.EquipmentType;
 
-public abstract class Accessory extends Equipment {
+public abstract class Accessory extends Equipment{
     private AccessoryType accessoryType;
 
     public Accessory(EquipmentSlots equipmentSlot, EquipmentType equipmentType, AccessoryType accessoryType) {

@@ -2,6 +2,7 @@ package character;
 
 import equipment.Armour;
 import equipment.Weapon;
+import equipment.accessory.Accessory;
 import equipment.accessory.Creature;
 import equipment.accessory.Shield;
 
@@ -11,8 +12,8 @@ public class Knight extends Player{
 
     private Shield shield;
 
-    public Knight(String name, double hitPoints, Weapon weaponSlot, Armour armourSlot, ArcheType archetype, Shield shield) {
-        super(name, hitPoints, weaponSlot, armourSlot, archetype);
+    public Knight(String name, double hitPoints, Weapon weaponSlot, Armour armourSlot, Accessory accessorySlot, ArcheType archetype, Shield shield) {
+        super(name, hitPoints, weaponSlot, armourSlot, accessorySlot, archetype);
         this.shield=shield;
     }
 

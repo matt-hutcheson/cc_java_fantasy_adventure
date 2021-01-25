@@ -22,13 +22,13 @@ public class ClericTest {
         weapon = new Weapon(EquipmentSlots.WEAPONSLOT, EquipmentType.MELEEWEAPON, WeaponType.CLUB);
         armour = new Armour(EquipmentSlots.ARMOURSLOT, EquipmentType.CLERICARMOUR, ArmourType.JERKIN);
         potion = new Potion(EquipmentSlots.ACCESSORYSLOT, EquipmentType.ACCESSORY, AccessoryType.POTION, PotionType.GERMALINE);
-        cleric = new Cleric("Eric", 100, weapon, armour, ArcheType.CLERIC, potion);
+        cleric = new Cleric("Eric", 100, weapon, armour, potion, ArcheType.CLERIC, potion);
     }
 
     @Test
     public void clericCanHeal(){
         cleric.damage(25);
-        cleric.throwPotion(cleric);
+        cleric.useAccessory(cleric, cleric);
         assertEquals(100, cleric.getCurrentHitPoints(), 0.01);
     }
 

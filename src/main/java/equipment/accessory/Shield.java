@@ -12,11 +12,8 @@ public class Shield extends Accessory {
         this.shieldType=shieldType;
     }
 
-    public ShieldType getShieldType() {
+    public ShieldType getType() {
         return shieldType;
     }
 
-    public void setShieldType(ShieldType shieldType) {
-        this.shieldType = shieldType;
-    }
 }

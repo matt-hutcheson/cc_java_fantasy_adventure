@@ -15,4 +15,5 @@ public class Potion extends Accessory {
     public PotionType getType() {
         return potionType;
     }
+
 }
